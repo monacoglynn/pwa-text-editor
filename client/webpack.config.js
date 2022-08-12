@@ -27,7 +27,7 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'src-sw.js'
       }),
-      new WebpackMwaManifest({
+      new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
@@ -48,7 +48,7 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.css$/i,
+          test: /\.css$/i, 
           use: ['style-loader', 'css-loader']
         },
        { test: /\.m?js$/,
@@ -61,7 +61,7 @@ module.exports = () => {
           }
         }
       }
-      ],
-    },
+      ]
+    }
   };
 };
